@@ -147,6 +147,11 @@ void Document::Load(std::ifstream& is) {
 
 void Document::clear() {
 
+	while ( ! commandStack.empty() )
+	{
+    	commandStack.pop();
+	}
+
 	figures.clear();
 
 }
