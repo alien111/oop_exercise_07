@@ -58,6 +58,12 @@ void Document::Save(std::ofstream& os) {
 void Document::Load(std::ifstream& is) {
 
 	figures.clear();
+
+	while ( ! commandStack.empty() )
+	{
+    	commandStack.pop();
+	}
+	
 	std::string type;
 
 	while(std::getline(is, type)) {
